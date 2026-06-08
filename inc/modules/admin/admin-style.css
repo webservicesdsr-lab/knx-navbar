@@ -1,0 +1,464 @@
+/* KNX Shell - Admin Builder */
+
+.knx-shell-admin {
+  max-width: 1440px;
+  margin-top: 18px;
+}
+
+.knx-shell-admin,
+.knx-shell-admin * {
+  box-sizing: border-box;
+}
+
+.knx-shell-admin__hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 18px;
+  padding: 30px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(30,99,200,0.18), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.86), rgba(255,255,255,0.62));
+  border: 1px solid rgba(255,255,255,0.72);
+  box-shadow:
+    0 24px 80px rgba(15, 23, 42, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.86);
+}
+
+.knx-shell-admin__kicker {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(30,99,200,0.10);
+  color: #1E63C8;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.knx-shell-admin__hero h2 {
+  margin: 0 0 6px;
+  color: #0f172a;
+  font-size: 32px;
+  letter-spacing: -0.04em;
+}
+
+.knx-shell-admin__hero p {
+  margin: 0;
+  max-width: 760px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.knx-shell-admin__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+.knx-shell-admin__stats div {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.70);
+  border: 1px solid rgba(226,232,240,0.82);
+}
+
+.knx-shell-admin__stats strong,
+.knx-shell-admin__stats span {
+  display: block;
+}
+
+.knx-shell-admin__stats strong {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.knx-shell-admin__stats span {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.knx-shell-admin__layout {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.knx-shell-admin__side {
+  position: sticky;
+  top: 42px;
+  padding: 12px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid rgba(226,232,240,0.82);
+  box-shadow: 0 16px 48px rgba(15,23,42,0.06);
+}
+
+.knx-shell-admin__side a {
+  min-height: 42px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  border-radius: 14px;
+  color: #334155;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.knx-shell-admin__side a:hover,
+.knx-shell-admin__side a:focus {
+  background: rgba(30,99,200,0.08);
+  color: #1E63C8;
+  outline: none;
+  box-shadow: none;
+}
+
+.knx-shell-admin__main {
+  display: grid;
+  gap: 18px;
+}
+
+.knx-shell-admin__panel {
+  padding: 0;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid rgba(226,232,240,0.82);
+  box-shadow:
+    0 18px 55px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255,255,255,0.85);
+  overflow: hidden;
+}
+
+.knx-shell-admin__panel summary {
+  list-style: none;
+}
+
+.knx-shell-admin__panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.knx-shell-admin__panel-head {
+  padding: 22px 24px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  background: rgba(248,250,252,0.76);
+  border-bottom: 1px solid rgba(226,232,240,0.74);
+}
+
+.knx-shell-admin__panel-head h3 {
+  margin: 0 0 4px;
+  color: #0f172a;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+.knx-shell-admin__panel-head p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.knx-shell-admin__panel-head .dashicons {
+  color: #64748b;
+  transition: transform 180ms ease;
+}
+
+.knx-shell-admin__panel[open] .knx-shell-admin__panel-head .dashicons {
+  transform: rotate(180deg);
+}
+
+.knx-shell-admin__panel-body {
+  padding: 24px;
+}
+
+.knx-shell-admin__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.knx-shell-admin__full {
+  grid-column: 1 / -1;
+}
+
+.knx-shell-admin label {
+  display: block;
+}
+
+.knx-shell-admin label span {
+  display: block;
+  margin-bottom: 6px;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.knx-shell-admin input[type="text"],
+.knx-shell-admin input[type="url"],
+.knx-shell-admin input[type="number"],
+.knx-shell-admin select {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid rgba(148,163,184,0.38);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.96);
+  color: #0f172a;
+}
+
+.knx-shell-admin input:focus,
+.knx-shell-admin select:focus {
+  border-color: rgba(30,99,200,0.58);
+  box-shadow: 0 0 0 4px rgba(30,99,200,0.10);
+  outline: none;
+}
+
+.knx-shell-admin__toggle {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(248,250,252,0.82);
+}
+
+.knx-shell-admin__toggle input {
+  margin: 0;
+}
+
+.knx-shell-admin__toggle span {
+  margin: 0 !important;
+}
+
+.knx-shell-admin__logo-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.knx-shell-admin__logo-preview {
+  position: relative;
+  width: 96px;
+  height: 72px;
+  flex: 0 0 96px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  color: #1E63C8;
+  font-weight: 950;
+}
+
+.knx-shell-admin__logo-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+.knx-shell-admin__logo-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.knx-shell-menu-builder {
+  display: grid;
+  gap: 14px;
+}
+
+.knx-shell-menu-card {
+  padding: 18px;
+  border-radius: 22px;
+  background: #f8fafc;
+  border: 1px solid rgba(226,232,240,0.92);
+}
+
+.knx-shell-menu-card__top,
+.knx-shell-submenu-wrap__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.knx-shell-menu-card__top {
+  margin-bottom: 14px;
+}
+
+.knx-shell-menu-card__top strong {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.knx-shell-submenu-wrap {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(203,213,225,0.82);
+}
+
+.knx-shell-submenu-wrap__head {
+  margin-bottom: 10px;
+}
+
+.knx-shell-submenu-wrap__head span {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.knx-shell-submenu-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 90px auto;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.knx-shell-admin__add-menu {
+  margin-top: 14px !important;
+}
+
+.knx-shell-admin__theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.knx-shell-admin__drawer-logo-colors {
+  margin-top: 14px;
+}
+
+.knx-shell-admin__theme-grid h4,
+.knx-shell-admin__reset-box h4 {
+  margin: 0 0 12px;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.knx-shell-admin__color-label {
+  margin-bottom: 12px !important;
+}
+
+.knx-shell-admin__color-field {
+  display: grid;
+  grid-template-columns: 52px minmax(92px, 1fr) minmax(120px, 1.2fr);
+  gap: 8px;
+  align-items: center;
+}
+
+.knx-shell-admin__color-field input[type="color"] {
+  width: 52px;
+  height: 42px;
+  padding: 2px;
+  border: 1px solid rgba(148,163,184,0.38);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.82);
+  cursor: pointer;
+}
+
+.knx-shell-admin__color-field input[type="text"] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.knx-shell-admin__color-field input[readonly] {
+  color: #64748b;
+  background: rgba(241,245,249,0.92);
+}
+
+.knx-shell-admin__reset-box {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(148,163,184,0.26);
+  background: rgba(248,250,252,0.76);
+}
+
+.knx-shell-admin__reset-box p {
+  margin: 0 0 12px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.knx-shell-admin__section-save {
+  margin-top: 20px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(226,232,240,0.82);
+}
+
+@media (max-width: 1100px) {
+  .knx-shell-admin__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .knx-shell-admin__stats {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+
+  .knx-shell-admin__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .knx-shell-admin__side {
+    position: relative;
+    top: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 760px) {
+  .knx-shell-admin__grid,
+  .knx-shell-admin__theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .knx-shell-submenu-row {
+    grid-template-columns: 1fr;
+  }
+
+  .knx-shell-admin__color-field {
+    grid-template-columns: 52px 1fr;
+  }
+
+  .knx-shell-admin__color-field input[readonly] {
+    grid-column: span 2;
+  }
+
+  .knx-shell-admin__section-save {
+    justify-content: stretch;
+  }
+
+  .knx-shell-admin__section-save .button {
+    width: 100%;
+    text-align: center;
+  }
+}
